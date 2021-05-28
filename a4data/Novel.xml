@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<scene ambient="0.2 0.2 0.2">
+  <!-- define camera,material,lights here -->
+  <light name="myLight" color="0.8 0.2 0.2" from="10 5 10 " power="0.6" type="point" />
+  <light name="myLight2" color="0.8 0.8 0.8" from="-10 10 2 " power="0.9" type="point" />
+  <material name="black" diffuse="0 0 0" specular="0.5 0.5 0.5" hardness="50" />
+  <material name="white" diffuse="1 1 1" specular="0.5 0.5 0.5" hardness="50" />
+  <material name="purple" diffuse="1 0 0.6" specular="0.5 0.5 0.5" hardness="20" index="1.4" refract="true"/>
+    <material name="g" diffuse="0.5 0.5 1" specular="0 0 0" hardness="20"/>
+      <material name="green" diffuse="0 1 0" specular="0.5 0.5 0.5" hardness="16" index="0.56" refract="true"/>
+  <material name="blue" diffuse="0 0 1" specular="0 0 0" hardness="16" index="1.5" refract="true"/>
+
+	<!-- render configuration -->
+  <render bgcolor="0 0 0" output="Novel.png" samples="12" jitter="true" reflect="true">
+    <camera name="myCamera" from="0 4 6" to="0 2 0" up="0 1 0" fovy="45" width="640" height="480" />
+  </render> 
+  
+  <!-- scene objects --> 
+  <node name="root">
+    	  <metaballs>
+	    <sphere center="-0.5 1 -5" radius="1" >
+		  <material ref="red" />
+	    </sphere>
+	    <sphere center="0.5 1 -5" radius="1" >
+		  <material ref="blue" />
+	    </sphere>
+	  </metaballs> 
+    <node name="queen" rotation="0 30 0" translation="1 0 -3">
+    <node name="bottom1" >
+        <box min="-0.5 0 -0.5" max="0.5 0.2 0.5">
+          <material ref="g" />
+        </box>
+    <node name="bottom2" >
+        <box min="-0.41 0.2 -0.41" max="0.41 0.3 0.41">
+          <material ref="g" />
+        </box>
+    <node name="waist" >
+        <box min="-0.3 0.3 -0.3" max="0.3 1.8 0.3">
+          <material ref="g" />
+        </box>
+        <node name="neck1" >
+        <box min="-0.5 1.8 -0.5" max="0.5 2 0.5">
+          <material ref="g" />
+        </box>
+      <node name="neck2" >
+        <box min="-0.41 2 -0.5" max="0.41 2.1 0.41">
+          <material ref="g" />
+        </box>   
+        <node name="head1">
+          <box min="-0.35 2.1 -0.35" max="0.35 2.4 0.35">
+          <material ref="g" />
+          </box>
+          <node name="head2">
+          <box min="-0.49 2.4 -0.49" max="0.49 2.6 0.49">
+          <material ref="g" />
+          </box>
+          <node name="crown">
+            <sphere center="0 2.8 0" radius="0.2">
+		    <material ref="g" />
+	        </sphere> 
+	        <node name="deco1">
+          <box min="-0.49 2.6 -0.49" max="-0.39 2.7 -0.39">
+          <material ref="g" />
+          </box>
+          <node name="deco2">
+          <box min="0.39 2.6 0.39" max="0.49 2.7 0.49">
+          <material ref="g" />
+          </box>
+          <node name="deco3">
+          <box min="-0.49 2.6 0.39" max="-0.39 2.7 0.49">
+          <material ref="g" />
+          </box>
+          <node name="deco4">
+          <box min="0.39 2.6 -0.49" max="0.49 2.7 -0.39">
+          <material ref="g" />
+          </box>
+          </node>
+          </node>
+          </node>
+          </node>
+          </node>
+        </node>
+      </node>
+      </node>
+      </node>
+      </node>
+      </node>
+      </node>
+      </node> 
+	  <plane coeffs="0 1 0 0" >
+		<material ref="black" />
+		<material2 ref="white" />
+	  </plane>
+	   <node name="blackqueen" rotation="0 0 90" translation="1 0.49 0">
+    <node name="b1" >
+        <box min="-0.5 0 -0.5" max="0.5 0.2 0.5">
+          <material ref="purple" />
+        </box>
+    <node name="b2" >
+        <box min="-0.41 0.2 -0.41" max="0.41 0.3 0.41">
+          <material ref="purple" />
+        </box>
+    <node name="wt" >
+        <box min="-0.3 0.3 -0.3" max="0.3 1.8 0.3">
+          <material ref="purple" />
+        </box>
+        <node name="n1" >
+        <box min="-0.5 1.8 -0.5" max="0.5 2 0.5">
+          <material ref="purple" />
+        </box>
+      <node name="n2" >
+        <box min="-0.41 2 -0.5" max="0.41 2.1 0.41">
+          <material ref="purple" />
+        </box>   
+        <node name="h1">
+          <box min="-0.35 2.1 -0.35" max="0.35 2.4 0.35">
+          <material ref="purple" />
+          </box>
+          <node name="h2">
+          <box min="-0.49 2.4 -0.49" max="0.49 2.6 0.49">
+          <material ref="purple" />
+          </box>
+          <node name="c">
+            <sphere center="0 2.8 0" radius="0.2">
+		    <material ref="purple" />
+	        </sphere> 
+	        <node name="d1">
+          <box min="-0.49 2.6 -0.49" max="-0.39 2.7 -0.39">
+          <material ref="purple" />
+          </box>
+          <node name="d2">
+          <box min="0.39 2.6 0.39" max="0.49 2.7 0.49">
+          <material ref="purple" />
+          </box>
+          <node name="d3">
+          <box min="-0.49 2.6 0.39" max="-0.39 2.7 0.49">
+          <material ref="purple" />
+          </box>
+          <node name="d4">
+          <box min="0.39 2.6 -0.49" max="0.49 2.7 -0.39">
+          <material ref="purple" />
+          </box>
+          </node>
+          </node>
+          </node>
+          </node>
+          </node>
+        </node>
+      </node>
+      </node>
+      </node>
+      </node>
+      </node>
+      </node>
+      </node>
+      <!-- back -->
+	  <node name="backWall" rotation="90 0 0" translation="0 0 -9" >
+	    <plane coeffs="0 0 1 4" >
+		  <material ref="black" />
+	    </plane>
+	  </node>
+  </node>
+</scene>
