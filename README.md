@@ -1,2 +1,2 @@
 # introComputerGraphics
--My final project of introductory course in computer graphics.
+-My final project of the introductory course in computer graphics COMP 557.
